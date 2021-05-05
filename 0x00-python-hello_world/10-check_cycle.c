@@ -8,19 +8,21 @@ int check_cycle(listint_t *list)
 {
     if (list != NULL)
     {
-        listint_t *head = NULL;
-        listint_t *aux = NULL;
-        head = list;
-        aux = head;
-        while (aux)
+        listint_t *slow = NULL;
+        listint_t *fast = NULL;
+        slow = list->next;
+        fast = list->next->next;
+        while (fast)
         {
-            if (aux->next == NULL)
+            if (fast->next == NULL)
             {
                 return (0);
             }
-            aux = aux->next;
-            if (aux == head)
+            slow = slow->next;
+            fast = fast->next->next;
+            if (fast == slow)
             {
+                printf("yes\n");
                 return (1);
             }
         }
