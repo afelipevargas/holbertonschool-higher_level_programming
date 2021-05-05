@@ -6,7 +6,7 @@
  */
 int check_cycle(listint_t *list)
 {
-    if (list != NULL || list->next != NULL)
+    if (list != NULL)
     {
         listint_t *slow = NULL;
         listint_t *fast = NULL;
