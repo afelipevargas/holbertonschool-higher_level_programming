@@ -10,19 +10,17 @@ int check_cycle(listint_t *list)
     {
         listint_t *slow = NULL;
         listint_t *fast = NULL;
-        slow = list->next;
-        fast = list->next->next;
+        slow = list;
+        fast = slow;
         while (fast)
         {
             if (fast->next == NULL)
             {
                 return (0);
             }
-            slow = slow->next;
-            fast = fast->next->next;
+            fast = fast->next;
             if (fast == slow)
             {
-                printf("yes\n");
                 return (1);
             }
         }
