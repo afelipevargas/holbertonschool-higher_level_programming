@@ -6,7 +6,7 @@
  */
 int check_cycle(listint_t *list)
 {
-    if (list != NULL)
+    if (list != NULL || list->next != NULL)
     {
         listint_t *head = NULL;
         listint_t *aux = NULL;
