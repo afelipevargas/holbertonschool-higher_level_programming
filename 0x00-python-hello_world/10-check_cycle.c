@@ -10,19 +10,18 @@ int check_cycle(listint_t *list)
     {
         listint_t *head = NULL;
         listint_t *aux = NULL;
-        head = list;
-        aux = head;
+        head = list->next;
+        aux = list->next->next;
         while (aux)
         {
-            if (aux->next == NULL)
-            {
-                return (0);
-            }
-            aux = aux->next;
-            if (aux == head)
+            if (head == aux)
             {
                 return (1);
             }
+            aux = aux->next;
+
+            head = head->next;
+            aux = aux->next->next;
         }
     }
     return (0);
