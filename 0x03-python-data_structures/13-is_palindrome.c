@@ -6,10 +6,10 @@
  */
 int is_palindrome(listint_t **head)
 {
-int array[2000], i = 0;
+int array[3000], i = 0;
 listint_t *aux = *head;
 
-while (aux)
+while (aux->next != NULL)
 {
 array[i] = aux->n;
 aux = aux->next;
@@ -17,7 +17,7 @@ i++;
 }
 aux = *head;
 i -= 1;
-while (i >= 0)
+while (aux->next != NULL)
 {
 if (array[i] != aux->n)
 {
