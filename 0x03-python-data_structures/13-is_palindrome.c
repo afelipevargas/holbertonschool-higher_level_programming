@@ -9,7 +9,7 @@ int is_palindrome(listint_t **head)
 int array[3000], i = 0;
 listint_t *aux = *head;
 
-while (aux->next != NULL)
+while (aux)
 {
 array[i] = aux->n;
 aux = aux->next;
@@ -17,7 +17,7 @@ i++;
 }
 aux = *head;
 i -= 1;
-while (aux->next != NULL)
+while (aux)
 {
 if (array[i] != aux->n)
 {
