@@ -13,8 +13,10 @@ while (aux)
 {
 array[i] = aux->n;
 aux = aux->next;
+i++;
 }
 aux = *head;
+i -= 1;
 while (aux)
 {
 if (array[i] != aux->n)
