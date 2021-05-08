@@ -6,30 +6,15 @@
  */
 int is_palindrome(listint_t **head)
 {
+int array[2000], i = 0;
 listint_t *aux = *head;
-int nodes = 0;
 
-if (!head && !*head)
-{
-return (0);
-}
-while (aux)
-{
-aux = aux->next;
-nodes++;
-}
-
-int array[nodes], i = 0;
-
-aux = *head;
 while (aux)
 {
 array[i] = aux->n;
 aux = aux->next;
-i++;
 }
 aux = *head;
-i -= 1;
 while (aux)
 {
 if (array[i] != aux->n)
