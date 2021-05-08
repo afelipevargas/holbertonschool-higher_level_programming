@@ -7,11 +7,21 @@
 int is_palindrome(listint_t **head)
 {
 listint_t *aux = *head;
-int array[1024], i = 0;
+int nodes = 0;
+
 if (!head && !*head)
 {
 return (0);
 }
+while (aux)
+{
+aux = aux->next;
+nodes++;
+}
+
+int array[nodes], i = 0;
+
+aux = *head;
 while (aux)
 {
 array[i] = aux->n;
