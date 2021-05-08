@@ -17,7 +17,7 @@ i++;
 }
 aux = *head;
 i -= 1;
-while (aux)
+while (i >= 0)
 {
 if (array[i] != aux->n)
 {
