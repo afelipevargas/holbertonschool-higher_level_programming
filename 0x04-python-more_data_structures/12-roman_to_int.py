@@ -13,7 +13,7 @@ def roman_to_int(roman_string):
         'M': 1000
     }
     ret_num = 0
-    
+
     for i in range(len(roman_string)):
         if roman.get(roman_string[i], 0) == 0:
             return 0
